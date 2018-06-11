@@ -1,5 +1,9 @@
 language: crystal
 
+script:
+  - crystal spec
+  - crystal tool format --check
+
 # https://docs.travis-ci.com/user/notifications
 notifications:
   email: no

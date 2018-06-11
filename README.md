@@ -24,6 +24,7 @@ require "hour"
 
 # TODO
 
+- Git hooks: add `crystal tool format`
 - Find out where to host the documentation. (_Review this in a few months._)
 
 [Build status]: https://travis-ci.org/botanicus/hour
