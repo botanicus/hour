@@ -12,9 +12,9 @@ describe Hour do
       p Hour.new(1, 45).hours.round # 2
       puts
 
-      p Hour.new(1, 25, 52).minutes.value # 25
-      p Hour.new(1, 25, 52).minutes.round # 26
-      p Hour.new(1, 25, 52).minutes.total # 85
+      p Hour.new(1, 25, 52).minutes.value       # 25
+      p Hour.new(1, 25, 52).minutes.round       # 26
+      p Hour.new(1, 25, 52).minutes.total       # 85
       p Hour.new(1, 25, 52).minutes.round_total # 86
       puts
 

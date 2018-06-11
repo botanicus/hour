@@ -2,7 +2,8 @@ require "./hour/*"
 
 class Hour
   class Unit
-    getter  total, value
+    getter total, value
+
     def initialize(@hour : Hour)
     end
   end
@@ -58,7 +59,7 @@ class Hour
 
   # Hour.parse("1:00:00")
   # Hour.parse("1:00", "%h:%m?") # Will work with "1:00" or just "1".
-  def self.parse(serialised_hour : String) #: self
+  def self.parse(serialised_hour : String) # : self
     argument_array = serialised_hour.split(':').map &.to_i
 
     if argument_array.size < 3

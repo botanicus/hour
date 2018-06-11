@@ -20,6 +20,8 @@ dependencies:
 require "hour"
 ```
 
+`crystal docs`
+
 # TODO
 
 - Find out where to host the documentation. (_Review this in a few months._)
