@@ -1,6 +1,8 @@
 # hour
 
-TODO: Write a description here
+[![Build status][BS img]][Build status]
+
+Hour class to work with hours, minutes and seconds, convert between various units and format the output.
 
 ## Installation
 
@@ -18,20 +20,9 @@ dependencies:
 require "hour"
 ```
 
-TODO: Write usage instructions here
+# TODO
 
-## Development
+- Find out where to host the documentation. (_Review this in a few months._)
 
-TODO: Write development instructions here
-
-## Contributing
-
-1. Fork it ( https://github.com/botanicus/hour/fork )
-2. Create your feature branch (git checkout -b my-new-feature)
-3. Commit your changes (git commit -am 'Add some feature')
-4. Push to the branch (git push origin my-new-feature)
-5. Create a new Pull Request
-
-## Contributors
-
-- [botanicus](https://github.com/botanicus) James C Russell - creator, maintainer
+[Build status]: https://travis-ci.org/botanicus/hour
+[BS img]: https://travis-ci.org/botanicus/hour.svg?branch=master
