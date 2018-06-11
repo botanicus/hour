@@ -20,7 +20,14 @@ dependencies:
 require "hour"
 ```
 
-`crystal docs`
+# Development
+
+```shell
+gem install guard guard-shell
+
+# Watch for changes and run tests, generate documentation and fix formatting.
+guard
+```
 
 # TODO
 
