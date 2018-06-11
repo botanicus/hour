@@ -13,27 +13,16 @@ class Hour
     end
   end
 
-  # 1:45:00.hours.value => 1
-  # 1:45:00.hours.round => 2
   private class HourUnit < Unit
     def value : Int32
       @hour.h
     end
 
-    # Test.
-    #
-    #     Hour.new(1, 25).hours.round # => 1
-    #     Hour.new(1, 45).hours.round # => 2
     def round : Int32
       self.value + ((0..29).includes?(@hour.m) ? 0 : 1)
     end
   end
 
-  # 1:45:52.minutes.value => 45
-  # 1:45:52.minutes.round => 46
-  #
-  # 1:45:52.minutes.total => 105
-  # 1:45:52.minutes.round_total => 106
   private class MinuteUnit < Unit
     def value : Int32
       @hour.m
@@ -62,12 +51,17 @@ class Hour
     end
   end
 
+  # TODO: Test me and document me.
   def self.now : self
     self.new(h: Time.now.hours, m: Time.now.minutes, s: Time.now.seconds)
   end
 
-  # Hour.parse("1:00:00")
-  # Hour.parse("1:00", "%h:%m?") # Will work with "1:00" or just "1".
+  # Build an hour instance from an hour string.
+  #
+  #     Hour.parse("1:00:00")
+  #     Hour.parse("1:00", "%h:%m?") # Will work with "1:00" or just "1".
+  #
+  # TODO: Implement me, test me and document me.
   def self.parse(serialised_hour : String) # : self
     argument_array = serialised_hour.split(':').map &.to_i
 
@@ -79,7 +73,11 @@ class Hour
     # self.new(*Tuple(String).from(parts))
   end
 
-  # Hour.from(minutes: 85)
+  # Build an hour instance from *either* **minutes** *or* **seconds**.
+  # Unlike `.new`, either of these values can be over 60.
+  #
+  #     Hour.from(minutes: 85)  # => Hour.new(h: 1, m: 25)
+  #     Hour.from(seconds: 120) # => Hour.new(m: 2)
   def self.from(minutes = 0, seconds = 0) : self
     if minutes != 0 && seconds != 0
       raise ArgumentError.new("Use either minutes OR seconds, not both.")
@@ -92,10 +90,12 @@ class Hour
     end
   end
 
-  getter h, m, s
+  protected getter h, m, s
 
-  # Hour.new(1)
-  # Hour.new(m: 25)
+  # Build an hour instance from *h*, *m* and *s*.
+  # Raises an argument error if *m* or *s* is a value over 60.
+  #
+  # For instantiating this class from a *minutes* or *seconds* value over 60, use `.from`.
   def initialize(@h = 0, @m = 0, @s = 0)
     if @m > 60
       raise ArgumentError.new("Minutes must be a number between 0 and 60.")
@@ -113,20 +113,35 @@ class Hour
     self.class.new(hours, minutes, seconds)
   end
 
+  # Returns a decorator providing convenience methods for working with hours.
+  #
+  #     Hour.new(1, 25).hours.round # => 1
+  #     Hour.new(1, 45).hours.round # => 2
   def hours
     HourUnit.new(self)
   end
 
+  # Returns a decorator providing convenience methods for working with minutes.
+  #
+  #     Hour.new(1, 25, 52).minutes.value       # => 25
+  #     Hour.new(1, 25, 52).minutes.round       # => 26
+  #     Hour.new(1, 25, 52).minutes.total       # => 85
+  #     Hour.new(1, 25, 52).minutes.round_total # => 86
   def minutes
     MinuteUnit.new(self)
   end
 
+  # Returns a decorator providing convenience methods for working with seconds.
+  #
+  #     Hour.new(m: 1, s: 10).seconds.value # => 10
+  #     Hour.new(1, 45, 10  ).seconds.total # => (1 * 60 * 60) + (45 * 60) + 10
   def seconds
     SecondUnit.new(self)
   end
 
+  # TODO: Add formatting string support.
+  # TODO: Pad 0s.
   def to_s(format : String?) : String
-    # TODO
     "#{@h}:#{@m}:#{@s}"
   end
 end

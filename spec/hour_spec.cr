@@ -1,38 +1,6 @@
 require "./spec_helper"
 
 describe Hour do
-  describe ".new" do
-    it "takes up to three arguments" do
-      Hour.new(1).h.should eq(1)
-      Hour.new(1).m.should eq(0)
-      Hour.new(1).s.should eq(0)
-
-      Hour.new(1, 2).h.should eq(1)
-      Hour.new(1, 2).m.should eq(2)
-      Hour.new(1, 2).s.should eq(0)
-
-      Hour.new(1, 2, 3).h.should eq(1)
-      Hour.new(1, 2, 3).m.should eq(2)
-      Hour.new(1, 2, 3).s.should eq(3)
-    end
-
-    it "takes keyword arguments h, m, s" do
-      Hour.new(h: 1).h.should eq(1)
-
-      Hour.new(h: 1, m: 2).h.should eq(1)
-      Hour.new(h: 1, m: 2).m.should eq(2)
-      Hour.new(h: 1, m: 2).s.should eq(0)
-
-      Hour.new(s: 10).h.should eq(0)
-      Hour.new(s: 10).m.should eq(0)
-      Hour.new(s: 10).s.should eq(10)
-
-      Hour.new(h: 1, s: 10).h.should eq(1)
-      Hour.new(h: 1, s: 10).m.should eq(0)
-      Hour.new(h: 1, s: 10).s.should eq(10)
-    end
-  end
-
   describe ".parse" do
     pending "implement me" do
       # TODO
