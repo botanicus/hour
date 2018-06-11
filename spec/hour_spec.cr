@@ -8,6 +8,12 @@ describe Hour do
     end
   end
 
+  describe ".now" do
+    pending "implement me" do
+      # TODO
+    end
+  end
+
   describe "#to_s" do
     pending "implement me" do
       # TODO

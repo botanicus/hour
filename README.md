@@ -18,6 +18,14 @@ dependencies:
 
 ```crystal
 require "hour"
+
+hour = Hour.from(minutes: 85)
+puts "It's #{hour.hours.value}:#{hour.minutes.value}!"
+
+hour = Hour.new(1, 25) + Hour.new(s: 10)
+puts "It's #{hour.to_s}!"
+
+puts "The system time is #{Hour.now}!"
 ```
 
 # Development
@@ -31,6 +39,7 @@ guard
 
 # TODO
 
+- Fix TODOs in the code.
 - Release version 0.1.
 
 [Build status]: https://travis-ci.org/botanicus/hour

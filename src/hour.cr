@@ -106,6 +106,9 @@ class Hour
     end
   end
 
+  # Returns a new Hour instance returning the total time of the two hour instances.
+  #
+  #     Hour.new(m: 25, s: 10) + Hour.new(h: 1) # => Hour.new(1, 25, 10)
   def +(other : Hour) : Hour
     hours = @h + other.h + (@m + other.m + ((@s + other.s) / 60)) / 60
     minutes = (@m + other.m + ((@s + other.s) / 60)) % 60
