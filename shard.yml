@@ -1,5 +1,9 @@
 name: hour
 version: 0.1.0
+description: |
+  Hour library for Crystal providing helpers for parsing and formatting with hours.
+
+  Unlike Time, Hour is not bound to concrete day, it's just a wrapper taking hours, minutes and seconds.
 
 authors:
   - James C Russell <james@101ideas.cz>
