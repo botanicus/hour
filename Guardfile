@@ -25,4 +25,8 @@ guard :shell, all_on_start: true do
     system("crystal tool format")
     system("crystal docs")
   end
+
+  watch(%r{README.md}) do
+    system("crystal docs")
+  end
 end
