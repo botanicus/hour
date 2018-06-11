@@ -4,7 +4,7 @@
 
 Hour class to work with hours, minutes and seconds, convert between various units and format the output.
 
-## Installation
+# Installation
 
 Add this to your application's `shard.yml`:
 
@@ -14,7 +14,7 @@ dependencies:
     github: botanicus/hour
 ```
 
-## Usage
+# Usage
 
 ```crystal
 require "hour"
