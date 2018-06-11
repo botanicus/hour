@@ -1,8 +1,13 @@
 require "./hour/*"
 
 class Hour
-  class Unit
-    getter total, value
+  # Abstract time unit class.
+  #
+  # Subclasses are decorating the `Hour` class with functionality
+  # specific for their particular type (hours, minutes and seconds).
+  private abstract class Unit
+    # Value is expected to be defined.
+    abstract def value
 
     def initialize(@hour : Hour)
     end
@@ -10,13 +15,17 @@ class Hour
 
   # 1:45:00.hours.value => 1
   # 1:45:00.hours.round => 2
-  class HourUnit < Unit
+  private class HourUnit < Unit
     def value : Int32
       @hour.h
     end
 
+    # Test.
+    #
+    #     Hour.new(1, 25).hours.round # => 1
+    #     Hour.new(1, 45).hours.round # => 2
     def round : Int32
-      self.value + ((0..30).includes?(@hour.m) ? 0 : 1)
+      self.value + ((0..29).includes?(@hour.m) ? 0 : 1)
     end
   end
 
@@ -25,13 +34,13 @@ class Hour
   #
   # 1:45:52.minutes.total => 105
   # 1:45:52.minutes.round_total => 106
-  class MinuteUnit < Unit
+  private class MinuteUnit < Unit
     def value : Int32
       @hour.m
     end
 
     def round : Int32
-      self.value + ((0..30).includes?(@hour.s) ? 0 : 1)
+      self.value + ((0..29).includes?(@hour.s) ? 0 : 1)
     end
 
     def total : Int32
@@ -39,11 +48,11 @@ class Hour
     end
 
     def round_total : Int32
-      self.total + ((0..30).includes?(@hour.s) ? 0 : 1)
+      self.total + ((0..29).includes?(@hour.s) ? 0 : 1)
     end
   end
 
-  class SecondUnit < Unit
+  private class SecondUnit < Unit
     def value : Int32
       @hour.s
     end
