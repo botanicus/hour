@@ -1,3 +1,5 @@
+require "./hour/*"
+
 class Hour
   class Unit
     getter  total, value
