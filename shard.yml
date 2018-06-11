@@ -1,0 +1,9 @@
+name: hour
+version: 0.1.0
+
+authors:
+  - James C Russell <james@101ideas.cz>
+
+crystal: 0.24.2
+
+license: MIT
