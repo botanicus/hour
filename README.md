@@ -39,6 +39,7 @@ guard
 
 # TODO
 
+- Change the repo to hour-crystal (-> GH pages and the link on the repo page), shard.yml, Travis CI.
 - Fix TODOs in the code.
 - Release version 0.1.
 
