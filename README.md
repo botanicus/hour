@@ -1,6 +1,6 @@
 # About
 [![Build status][BS img]][Build status]
-[API docs](https://botanicus.github.io/hour/)
+[API docs](https://botanicus.github.io/hour-crystal/)
 
 Hour class to work with hours, minutes and seconds, convert between various units and format the output. _Here's version of this library for Ruby: [hour-ruby](https://github.com/botanicus/hour-ruby)._
 
@@ -39,7 +39,6 @@ guard
 
 # TODO
 
-- Change the repo to hour-crystal (-> GH pages and the link on the repo page), shard.yml, Travis CI.
 - Fix TODOs in the code.
 - Release version 0.1.
 
