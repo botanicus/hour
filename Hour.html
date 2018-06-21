@@ -1,0 +1,479 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="utf-8">
+<meta http-equiv="X-UA-Compatible" content="IE=edge">
+<meta name="generator" content="Crystal Docs 0.25.0">
+
+
+<link href="css/style.css" rel="stylesheet" type="text/css">
+
+<script type="text/javascript" src="js/doc.js"></script>
+<script type="text/javascript">
+  CrystalDoc.base_path = "";
+</script>
+
+  <meta id="repository-name" content="github.com/botanicus/hour">
+  <title>Hour - github.com/botanicus/hour</title>
+</head>
+<body>
+
+<div class="sidebar">
+  <div class="sidebar-header">
+    <div class="search-box">
+      <input type="search" class="search-input" placeholder="Search..." spellcheck="false">
+    </div>
+
+    <div class="repository-links">
+      <a href="index.html">README</a>
+    </div>
+  </div>
+
+  <div class="search-results" class="hidden">
+    <ul class="search-list"></ul>
+  </div>
+
+  <div class="types-list">
+    <ul>
+  
+  <li class=" current" data-id="github.com/botanicus/hour/Hour" data-name="hour">
+      <a href="Hour.html">Hour</a>
+      
+    </li>
+  
+</ul>
+
+  </div>
+</div>
+
+
+<div class="main-content">
+<h1 class="type-name">
+
+  <span class="kind">class</span> Hour
+
+</h1>
+
+
+  <ul class="superclass-hierarchy"><li class="superclass"><a href="Hour.html">Hour</a></li><li class="superclass">Reference</li><li class="superclass">Object</li></ul>
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+  <h2>Defined in:</h2>
+  
+    
+      <a href="https://github.com/botanicus/hour/blob/0880e85edc69d587b3f7b16d99c6fa1198b854c5/src/hour/version.cr#L3" target="_blank">hour/version.cr</a>
+    
+    <br/>
+  
+    
+      <a href="https://github.com/botanicus/hour/blob/0880e85edc69d587b3f7b16d99c6fa1198b854c5/src/hour.cr#L3" target="_blank">hour.cr</a>
+    
+    <br/>
+  
+
+
+
+  
+    <h2>Constant Summary</h2>
+  
+  <dl>
+    
+      <dt class="entry-const" id="PACKAGE">
+        <strong>PACKAGE</strong> = <code><span class="t">YAML</span>.parse(<span class="t">RAW_PKG_DATA</span>)</code>
+      </dt>
+      
+      <dd class="entry-const-doc">
+        <p>The whole content of shard.yml.</p>
+      </dd>
+      
+    
+      <dt class="entry-const" id="VERSION">
+        <strong>VERSION</strong> = <code><span class="t">PACKAGE</span>[<span class="s">&quot;version&quot;</span>]</code>
+      </dt>
+      
+    
+  </dl>
+
+
+
+  <h2>Constructors</h2>
+  <ul class="list-summary">
+    
+      <li class="entry-summary">
+        <a href="#from%28minutes%3D0%2Cseconds%3D0%29%3Aself-class-method" class="signature"><strong>.from</strong>(minutes = <span class="n">0</span>, seconds = <span class="n">0</span>) : self</a>
+        
+          <div class="summary"><p>Build an hour instance from <em>either</em> <strong>minutes</strong> <em>or</em> <strong>seconds</strong>.</p></div>
+        
+      </li>
+    
+      <li class="entry-summary">
+        <a href="#new%28h%3D0%2Cm%3D0%2Cs%3D0%29-class-method" class="signature"><strong>.new</strong>(h = <span class="n">0</span>, m = <span class="n">0</span>, s = <span class="n">0</span>)</a>
+        
+          <div class="summary"><p>Build an hour instance from <em>h</em>, <em>m</em> and <em>s</em>.</p></div>
+        
+      </li>
+    
+      <li class="entry-summary">
+        <a href="#now%3Aself-class-method" class="signature"><strong>.now</strong> : self</a>
+        
+          <div class="summary"><p><span class="flag orange">TODO</span>  Test me and document me.</p></div>
+        
+      </li>
+    
+  </ul>
+
+
+
+  <h2>Class Method Summary</h2>
+  <ul class="list-summary">
+    
+      <li class="entry-summary">
+        <a href="#from_time%28time%29-class-method" class="signature"><strong>.from_time</strong>(time)</a>
+        
+          <div class="summary"><p><span class="flag orange">TODO</span>  document and write tests.</p></div>
+        
+      </li>
+    
+      <li class="entry-summary">
+        <a href="#parse%28serialised_hour%3AString%29-class-method" class="signature"><strong>.parse</strong>(serialised_hour : String)</a>
+        
+          <div class="summary"><p>Build an hour instance from an hour string.</p></div>
+        
+      </li>
+    
+  </ul>
+
+
+
+  <h2>Instance Method Summary</h2>
+  <ul class="list-summary">
+    
+      <li class="entry-summary">
+        <a href="#%2B%28other%3AHour%29%3AHour-instance-method" class="signature"><strong>#+</strong>(other : Hour) : Hour</a>
+        
+          <div class="summary"><p>Returns a new Hour instance returning the total time of the two hour instances.</p></div>
+        
+      </li>
+    
+      <li class="entry-summary">
+        <a href="#hours-instance-method" class="signature"><strong>#hours</strong></a>
+        
+          <div class="summary"><p>Returns a decorator providing convenience methods for working with hours.</p></div>
+        
+      </li>
+    
+      <li class="entry-summary">
+        <a href="#minutes-instance-method" class="signature"><strong>#minutes</strong></a>
+        
+          <div class="summary"><p>Returns a decorator providing convenience methods for working with minutes.</p></div>
+        
+      </li>
+    
+      <li class="entry-summary">
+        <a href="#seconds-instance-method" class="signature"><strong>#seconds</strong></a>
+        
+          <div class="summary"><p>Returns a decorator providing convenience methods for working with seconds.</p></div>
+        
+      </li>
+    
+      <li class="entry-summary">
+        <a href="#to_s%28format%3AString%3F%29%3AString-instance-method" class="signature"><strong>#to_s</strong>(format : String?) : String</a>
+        
+          <div class="summary"><p><span class="flag orange">TODO</span>  Add formatting string support.</p></div>
+        
+      </li>
+    
+      <li class="entry-summary">
+        <a href="#to_time%28today%3DTime.now%29-instance-method" class="signature"><strong>#to_time</strong>(today = <span class="t">Time</span>.now)</a>
+        
+      </li>
+    
+  </ul>
+
+
+
+
+
+<div class="methods-inherited">
+  
+    
+
+
+    
+
+
+    
+
+
+  
+    
+
+
+    
+
+
+    
+
+
+  
+</div>
+
+
+  <h2>Constructor Detail</h2>
+  
+    <div class="entry-detail" id="from(minutes=0,seconds=0):self-class-method">
+      <div class="signature">
+        
+        def self.<strong>from</strong>(minutes = <span class="n">0</span>, seconds = <span class="n">0</span>) : self
+
+        <a class="method-permalink" href="#from%28minutes%3D0%2Cseconds%3D0%29%3Aself-class-method">#</a>
+      </div>
+      
+        <div class="doc"><p>Build an hour instance from <em>either</em> <strong>minutes</strong> <em>or</em> <strong>seconds</strong>.
+Unlike <code>.new</code>, either of these values can be over 60.</p>
+
+<pre><code><span class="t">Hour</span>.from(minutes: <span class="n">85</span>)  <span class="c"># =&gt; Hour.new(h: 1, m: 25)</span>
+<span class="t">Hour</span>.from(seconds: <span class="n">120</span>) <span class="c"># =&gt; Hour.new(m: 2)</span></code></pre></div>
+      
+      <br/>
+      <div>
+        
+          [<a href="https://github.com/botanicus/hour/blob/0880e85edc69d587b3f7b16d99c6fa1198b854c5/src/hour.cr#L90" target="_blank">View source</a>]
+        
+      </div>
+    </div>
+  
+    <div class="entry-detail" id="new(h=0,m=0,s=0)-class-method">
+      <div class="signature">
+        
+        def self.<strong>new</strong>(h = <span class="n">0</span>, m = <span class="n">0</span>, s = <span class="n">0</span>)
+
+        <a class="method-permalink" href="#new%28h%3D0%2Cm%3D0%2Cs%3D0%29-class-method">#</a>
+      </div>
+      
+        <div class="doc"><p>Build an hour instance from <em>h</em>, <em>m</em> and <em>s</em>.
+Raises an argument error if <em>m</em> or <em>s</em> is a value over 60.</p>
+
+<p>For instantiating this class from a <em>minutes</em> or <em>seconds</em> value over 60, use <code>.from</code>.</p></div>
+      
+      <br/>
+      <div>
+        
+          [<a href="https://github.com/botanicus/hour/blob/0880e85edc69d587b3f7b16d99c6fa1198b854c5/src/hour.cr#L108" target="_blank">View source</a>]
+        
+      </div>
+    </div>
+  
+    <div class="entry-detail" id="now:self-class-method">
+      <div class="signature">
+        
+        def self.<strong>now</strong> : self
+
+        <a class="method-permalink" href="#now%3Aself-class-method">#</a>
+      </div>
+      
+        <div class="doc"><p><span class="flag orange">TODO</span>  Test me and document me.</p></div>
+      
+      <br/>
+      <div>
+        
+          [<a href="https://github.com/botanicus/hour/blob/0880e85edc69d587b3f7b16d99c6fa1198b854c5/src/hour.cr#L55" target="_blank">View source</a>]
+        
+      </div>
+    </div>
+  
+
+
+
+  <h2>Class Method Detail</h2>
+  
+    <div class="entry-detail" id="from_time(time)-class-method">
+      <div class="signature">
+        
+        def self.<strong>from_time</strong>(time)
+
+        <a class="method-permalink" href="#from_time%28time%29-class-method">#</a>
+      </div>
+      
+        <div class="doc"><p><span class="flag orange">TODO</span>  document and write tests.</p></div>
+      
+      <br/>
+      <div>
+        
+          [<a href="https://github.com/botanicus/hour/blob/0880e85edc69d587b3f7b16d99c6fa1198b854c5/src/hour.cr#L60" target="_blank">View source</a>]
+        
+      </div>
+    </div>
+  
+    <div class="entry-detail" id="parse(serialised_hour:String)-class-method">
+      <div class="signature">
+        
+        def self.<strong>parse</strong>(serialised_hour : String)
+
+        <a class="method-permalink" href="#parse%28serialised_hour%3AString%29-class-method">#</a>
+      </div>
+      
+        <div class="doc"><p>Build an hour instance from an hour string.</p>
+
+<pre><code><span class="t">Hour</span>.parse(<span class="s">&quot;1:00:00&quot;</span>)
+<span class="t">Hour</span>.parse(<span class="s">&quot;1:00&quot;</span>, <span class="s">&quot;%h:%m?&quot;</span>) <span class="c"># Will work with &quot;1:00&quot; or just &quot;1&quot;.</span></code></pre>
+
+<p><span class="flag orange">TODO</span>  Implement me, test me and document me.</p></div>
+      
+      <br/>
+      <div>
+        
+          [<a href="https://github.com/botanicus/hour/blob/0880e85edc69d587b3f7b16d99c6fa1198b854c5/src/hour.cr#L70" target="_blank">View source</a>]
+        
+      </div>
+    </div>
+  
+
+
+
+  <h2>Instance Method Detail</h2>
+  
+    <div class="entry-detail" id="+(other:Hour):Hour-instance-method">
+      <div class="signature">
+        
+        def <strong>+</strong>(other : <a href="Hour.html">Hour</a>) : <a href="Hour.html">Hour</a>
+
+        <a class="method-permalink" href="#%2B%28other%3AHour%29%3AHour-instance-method">#</a>
+      </div>
+      
+        <div class="doc"><p>Returns a new Hour instance returning the total time of the two hour instances.</p>
+
+<pre><code><span class="t">Hour</span>.<span class="k">new</span>(m: <span class="n">25</span>, s: <span class="n">10</span>) <span class="o">+</span> <span class="t">Hour</span>.<span class="k">new</span>(h: <span class="n">1</span>) <span class="c"># =&gt; Hour.new(1, 25, 10)</span></code></pre></div>
+      
+      <br/>
+      <div>
+        
+          [<a href="https://github.com/botanicus/hour/blob/0880e85edc69d587b3f7b16d99c6fa1198b854c5/src/hour.cr#L121" target="_blank">View source</a>]
+        
+      </div>
+    </div>
+  
+    <div class="entry-detail" id="hours-instance-method">
+      <div class="signature">
+        
+        def <strong>hours</strong>
+
+        <a class="method-permalink" href="#hours-instance-method">#</a>
+      </div>
+      
+        <div class="doc"><p>Returns a decorator providing convenience methods for working with hours.</p>
+
+<pre><code><span class="t">Hour</span>.<span class="k">new</span>(<span class="n">1</span>, <span class="n">25</span>).hours.round <span class="c"># =&gt; 1</span>
+<span class="t">Hour</span>.<span class="k">new</span>(<span class="n">1</span>, <span class="n">45</span>).hours.round <span class="c"># =&gt; 2</span></code></pre></div>
+      
+      <br/>
+      <div>
+        
+          [<a href="https://github.com/botanicus/hour/blob/0880e85edc69d587b3f7b16d99c6fa1198b854c5/src/hour.cr#L132" target="_blank">View source</a>]
+        
+      </div>
+    </div>
+  
+    <div class="entry-detail" id="minutes-instance-method">
+      <div class="signature">
+        
+        def <strong>minutes</strong>
+
+        <a class="method-permalink" href="#minutes-instance-method">#</a>
+      </div>
+      
+        <div class="doc"><p>Returns a decorator providing convenience methods for working with minutes.</p>
+
+<pre><code><span class="t">Hour</span>.<span class="k">new</span>(<span class="n">1</span>, <span class="n">25</span>, <span class="n">52</span>).minutes.value       <span class="c"># =&gt; 25</span>
+<span class="t">Hour</span>.<span class="k">new</span>(<span class="n">1</span>, <span class="n">25</span>, <span class="n">52</span>).minutes.round       <span class="c"># =&gt; 26</span>
+<span class="t">Hour</span>.<span class="k">new</span>(<span class="n">1</span>, <span class="n">25</span>, <span class="n">52</span>).minutes.total       <span class="c"># =&gt; 85</span>
+<span class="t">Hour</span>.<span class="k">new</span>(<span class="n">1</span>, <span class="n">25</span>, <span class="n">52</span>).minutes.round_total <span class="c"># =&gt; 86</span></code></pre></div>
+      
+      <br/>
+      <div>
+        
+          [<a href="https://github.com/botanicus/hour/blob/0880e85edc69d587b3f7b16d99c6fa1198b854c5/src/hour.cr#L142" target="_blank">View source</a>]
+        
+      </div>
+    </div>
+  
+    <div class="entry-detail" id="seconds-instance-method">
+      <div class="signature">
+        
+        def <strong>seconds</strong>
+
+        <a class="method-permalink" href="#seconds-instance-method">#</a>
+      </div>
+      
+        <div class="doc"><p>Returns a decorator providing convenience methods for working with seconds.</p>
+
+<pre><code><span class="t">Hour</span>.<span class="k">new</span>(m: <span class="n">1</span>, s: <span class="n">10</span>).seconds.value <span class="c"># =&gt; 10</span>
+<span class="t">Hour</span>.<span class="k">new</span>(<span class="n">1</span>, <span class="n">45</span>, <span class="n">10</span>  ).seconds.total <span class="c"># =&gt; (1 * 60 * 60) + (45 * 60) + 10</span></code></pre></div>
+      
+      <br/>
+      <div>
+        
+          [<a href="https://github.com/botanicus/hour/blob/0880e85edc69d587b3f7b16d99c6fa1198b854c5/src/hour.cr#L150" target="_blank">View source</a>]
+        
+      </div>
+    </div>
+  
+    <div class="entry-detail" id="to_s(format:String?):String-instance-method">
+      <div class="signature">
+        
+        def <strong>to_s</strong>(format : String?) : String
+
+        <a class="method-permalink" href="#to_s%28format%3AString%3F%29%3AString-instance-method">#</a>
+      </div>
+      
+        <div class="doc"><p><span class="flag orange">TODO</span>  Add formatting string support.</p>
+
+<p><span class="flag orange">TODO</span>  Pad 0s. I. e. "#{self.hours}:#{format('%02d', self.minutes_over_the_hour)}"</p></div>
+      
+      <br/>
+      <div>
+        
+          [<a href="https://github.com/botanicus/hour/blob/0880e85edc69d587b3f7b16d99c6fa1198b854c5/src/hour.cr#L156" target="_blank">View source</a>]
+        
+      </div>
+    </div>
+  
+    <div class="entry-detail" id="to_time(today=Time.now)-instance-method">
+      <div class="signature">
+        
+        def <strong>to_time</strong>(today = <span class="t">Time</span>.now)
+
+        <a class="method-permalink" href="#to_time%28today%3DTime.now%29-instance-method">#</a>
+      </div>
+      
+      <br/>
+      <div>
+        
+          [<a href="https://github.com/botanicus/hour/blob/0880e85edc69d587b3f7b16d99c6fa1198b854c5/src/hour.cr#L162" target="_blank">View source</a>]
+        
+      </div>
+    </div>
+  
+
+
+
+
+</div>
+
+</body>
+</html>
