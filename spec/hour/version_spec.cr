@@ -1,4 +1,5 @@
-require "../spec_helper"
+require "spec"
+require "../../src/hour"
 
 describe Hour do
   it "is semantically versioned" do

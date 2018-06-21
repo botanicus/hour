@@ -53,7 +53,12 @@ class Hour
 
   # TODO: Test me and document me.
   def self.now : self
-    self.new(h: Time.now.hours, m: Time.now.minutes, s: Time.now.seconds)
+    self.from_time(Time.now)
+  end
+
+  # TODO: document and write tests.
+  def self.from_time(time)
+    self.new(h: time.hours, m: time.minutes, s: time.seconds)
   end
 
   # Build an hour instance from an hour string.
@@ -65,12 +70,16 @@ class Hour
   def self.parse(serialised_hour : String) # : self
     argument_array = serialised_hour.split(':').map &.to_i
 
-    if argument_array.size < 3
+    case argument_array.size
+    when 3
+      p arguments = Tuple(Int32).from(argument_array)
+      # self.new(*Tuple(String).from(parts))
+    when (0..2)
+      # TODO: if formatting_string ...
       raise ArgumentError.new("If format is not H:M:S, formatting string must be provided.")
+    when (4..10) # TODO: Infinity.
+      raise ArgumentError, "Too many arguments."
     end
-
-    p arguments = Tuple(Int32).from(argument_array)
-    # self.new(*Tuple(String).from(parts))
   end
 
   # Build an hour instance from *either* **minutes** *or* **seconds**.
@@ -143,8 +152,14 @@ class Hour
   end
 
   # TODO: Add formatting string support.
-  # TODO: Pad 0s.
+  # TODO: Pad 0s. I. e. "#{self.hours}:#{format('%02d', self.minutes_over_the_hour)}"
   def to_s(format : String?) : String
     "#{@h}:#{@m}:#{@s}"
+  end
+
+  # alias_method :inspect, :to_s
+
+  def to_time(today = Time.now)
+    Time.new(today.year, today.month, today.day, self.hours, self.minutes_over_the_hour)
   end
 end
