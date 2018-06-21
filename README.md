@@ -2,7 +2,7 @@
 [![Build status][BS img]][Build status]
 [API docs](https://botanicus.github.io/hour/)
 
-Hour class to work with hours, minutes and seconds, convert between various units and format the output.
+Hour class to work with hours, minutes and seconds, convert between various units and format the output. _Here's version of this library for Ruby: [hour-ruby](https://github.com/botanicus/hour-ruby)._
 
 # Installation
 
